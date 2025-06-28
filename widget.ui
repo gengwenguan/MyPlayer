@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Widget</class>
+ <widget class="QWidget" name="Widget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MyPlayer</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="res.qrc">
+    <normaloff>:/icon/camera.png</normaloff>:/icon/camera.png</iconset>
+  </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
+  <widget class="QWidget" name="layoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>801</width>
+     <height>607</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_3">
+      <property name="spacing">
+       <number>6</number>
+      </property>
+      <property name="sizeConstraint">
+       <enum>QLayout::SizeConstraint::SetDefaultConstraint</enum>
+      </property>
+      <property name="topMargin">
+       <number>5</number>
+      </property>
+      <item>
+       <widget class="QLineEdit" name="lineEdit">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>30</height>
+         </size>
+        </property>
+        <property name="toolTip">
+         <string/>
+        </property>
+        <property name="statusTip">
+         <string/>
+        </property>
+        <property name="styleSheet">
+         <string notr="true"/>
+        </property>
+        <property name="dragEnabled">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushButton_6">
+        <property name="minimumSize">
+         <size>
+          <width>70</width>
+          <height>30</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">/* 通用按钮样式，统一基础外观 */
+QPushButton {
+    background-color: rgba(50, 50, 50, 0.8); /* 半透灰底，融合视频背景 */
+    color: white; /* 白色文字清晰 */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* 浅色细边框 */
+    border-radius: 4px; /* 轻微圆角更柔和 */
+    padding: 6px 12px; /* 内边距保证点击区域 */
+}
+/* 鼠标悬浮，增强反馈 */
+QPushButton:hover {
+    background-color: rgba(100, 100, 100, 0.8); /* 稍亮灰色 */
+    border-color: rgba(255, 255, 255, 0.6); /* 边框更明显 */
+}
+/* 按下状态，模拟物理按钮按下 */
+QPushButton:pressed {
+    background-color: rgba(30, 30, 30, 0.8); /* 更深灰色 */
+}</string>
+        </property>
+        <property name="text">
+         <string>实时</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushButton_2">
+        <property name="minimumSize">
+         <size>
+          <width>70</width>
+          <height>30</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">/* 通用按钮样式，统一基础外观 */
+QPushButton {
+    background-color: rgba(50, 50, 50, 0.8); /* 半透灰底，融合视频背景 */
+    color: white; /* 白色文字清晰 */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* 浅色细边框 */
+    border-radius: 4px; /* 轻微圆角更柔和 */
+    padding: 6px 12px; /* 内边距保证点击区域 */
+}
+/* 鼠标悬浮，增强反馈 */
+QPushButton:hover {
+    background-color: rgba(100, 100, 100, 0.8); /* 稍亮灰色 */
+    border-color: rgba(255, 255, 255, 0.6); /* 边框更明显 */
+}
+/* 按下状态，模拟物理按钮按下 */
+QPushButton:pressed {
+    background-color: rgba(30, 30, 30, 0.8); /* 更深灰色 */
+}</string>
+        </property>
+        <property name="text">
+         <string>回放</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <widget class="YUV420PWidget" name="openGLWidget">
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QSlider" name="horizontalSlider">
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Orientation::Horizontal</enum>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_4">
+      <item>
+       <widget class="QPushButton" name="pushButton">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>30</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">/* 通用按钮样式，统一基础外观 */
+QPushButton {
+    background-color: rgba(50, 50, 50, 0.8); /* 半透灰底，融合视频背景 */
+    color: white; /* 白色文字清晰 */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* 浅色细边框 */
+    border-radius: 4px; /* 轻微圆角更柔和 */
+    padding: 6px 12px; /* 内边距保证点击区域 */
+}
+/* 鼠标悬浮，增强反馈 */
+QPushButton:hover {
+    background-color: rgba(100, 100, 100, 0.8); /* 稍亮灰色 */
+    border-color: rgba(255, 255, 255, 0.6); /* 边框更明显 */
+}
+/* 按下状态，模拟物理按钮按下 */
+QPushButton:pressed {
+    background-color: rgba(30, 30, 30, 0.8); /* 更深灰色 */
+}</string>
+        </property>
+        <property name="text">
+         <string>上个文件</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushButton_5">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>30</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">/* 通用按钮样式，统一基础外观 */
+QPushButton {
+    background-color: rgba(50, 50, 50, 0.8); /* 半透灰底，融合视频背景 */
+    color: white; /* 白色文字清晰 */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* 浅色细边框 */
+    border-radius: 4px; /* 轻微圆角更柔和 */
+    padding: 6px 12px; /* 内边距保证点击区域 */
+}
+/* 鼠标悬浮，增强反馈 */
+QPushButton:hover {
+    background-color: rgba(100, 100, 100, 0.8); /* 稍亮灰色 */
+    border-color: rgba(255, 255, 255, 0.6); /* 边框更明显 */
+}
+/* 按下状态，模拟物理按钮按下 */
+QPushButton:pressed {
+    background-color: rgba(30, 30, 30, 0.8); /* 更深灰色 */
+}</string>
+        </property>
+        <property name="text">
+         <string>快退</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushButton_7">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>30</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">/* 通用按钮样式，统一基础外观 */
+QPushButton {
+    background-color: rgba(50, 50, 50, 0.8); /* 半透灰底，融合视频背景 */
+    color: white; /* 白色文字清晰 */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* 浅色细边框 */
+    border-radius: 4px; /* 轻微圆角更柔和 */
+    padding: 6px 12px; /* 内边距保证点击区域 */
+}
+/* 鼠标悬浮，增强反馈 */
+QPushButton:hover {
+    background-color: rgba(100, 100, 100, 0.8); /* 稍亮灰色 */
+    border-color: rgba(255, 255, 255, 0.6); /* 边框更明显 */
+}
+/* 按下状态，模拟物理按钮按下 */
+QPushButton:pressed {
+    background-color: rgba(30, 30, 30, 0.8); /* 更深灰色 */
+}</string>
+        </property>
+        <property name="text">
+         <string>x3</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushButton_4">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>30</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">/* 通用按钮样式，统一基础外观 */
+QPushButton {
+    background-color: rgba(50, 50, 50, 0.8); /* 半透灰底，融合视频背景 */
+    color: white; /* 白色文字清晰 */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* 浅色细边框 */
+    border-radius: 4px; /* 轻微圆角更柔和 */
+    padding: 6px 12px; /* 内边距保证点击区域 */
+}
+/* 鼠标悬浮，增强反馈 */
+QPushButton:hover {
+    background-color: rgba(100, 100, 100, 0.8); /* 稍亮灰色 */
+    border-color: rgba(255, 255, 255, 0.6); /* 边框更明显 */
+}
+/* 按下状态，模拟物理按钮按下 */
+QPushButton:pressed {
+    background-color: rgba(30, 30, 30, 0.8); /* 更深灰色 */
+}</string>
+        </property>
+        <property name="text">
+         <string>快进</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushButton_3">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>30</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">/* 通用按钮样式，统一基础外观 */
+QPushButton {
+    background-color: rgba(50, 50, 50, 0.8); /* 半透灰底，融合视频背景 */
+    color: white; /* 白色文字清晰 */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* 浅色细边框 */
+    border-radius: 4px; /* 轻微圆角更柔和 */
+    padding: 6px 12px; /* 内边距保证点击区域 */
+}
+/* 鼠标悬浮，增强反馈 */
+QPushButton:hover {
+    background-color: rgba(100, 100, 100, 0.8); /* 稍亮灰色 */
+    border-color: rgba(255, 255, 255, 0.6); /* 边框更明显 */
+}
+/* 按下状态，模拟物理按钮按下 */
+QPushButton:pressed {
+    background-color: rgba(30, 30, 30, 0.8); /* 更深灰色 */
+}</string>
+        </property>
+        <property name="text">
+         <string>下个文件</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>YUV420PWidget</class>
+   <extends>QOpenGLWidget</extends>
+   <header>yuv420pwidget.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="res.qrc"/>
+ </resources>
+ <connections/>
+</ui>
