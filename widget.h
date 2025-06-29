@@ -91,7 +91,7 @@ private:
     unsigned int  m_speed = 1;            //播放的倍速
     unsigned int  m_decVideoCount = 0;    //解码的视频帧数
 
-    QImage m_image;
+    QImage m_image;  //默认底图
     QVector<uint8_t> m_yData;
     QVector<uint8_t> m_uData;
     QVector<uint8_t> m_vData;

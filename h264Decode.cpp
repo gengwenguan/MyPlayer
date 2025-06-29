@@ -43,6 +43,7 @@ C_H264Decode::C_H264Decode(C_Listener* pListener)
 C_H264Decode::~C_H264Decode()
 {
     m_RunFlg = false;
+    m_SemFull.signal(); //唤醒可能睡眠的线程，保证线程能正常退出
     if(m_DecThread.joinable()){
         m_DecThread.join();
     }
@@ -101,6 +102,9 @@ void C_H264Decode::DecThread()
 {
     while(m_RunFlg){
         m_SemFull.wait();
+
+        if(m_H264Queue.size() == 0)
+            continue;
 
         std::vector<char> tmpData = std::move(m_H264Queue.front());
         m_H264Queue.pop();

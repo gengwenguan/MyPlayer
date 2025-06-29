@@ -15,7 +15,6 @@ Widget::Widget(QWidget *parent)
     , m_H264Decode(new C_H264Decode(this))
     , m_OpusDec(new C_OpusDec(this))
     , m_doublePcmBuffer(new char[1024 * 1024])
-
 {
     m_ui->setupUi(this);
     this->setLayout(m_ui->verticalLayout);
@@ -110,7 +109,9 @@ Widget::Widget(QWidget *parent)
 
 Widget::~Widget()
 {
+
     delete m_ui;
+    qDebug() << "~Widget";
 }
 
 int Widget::OnYuvData(AVFrame *frame)
